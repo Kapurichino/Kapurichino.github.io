@@ -1,3 +1,7 @@
+
+theme: panthera-jekyll
+
+
 defaults:
   -
     scope:
