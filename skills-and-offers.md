@@ -3,7 +3,7 @@
 
 # Skills & Offers
 
-¾ð¾î : C#, C++
+ì–¸ì–´ : C#, C++
 
-°ÔÀÓ ¿£Áø : Unity, Unreal Engine
+ê²Œìž„ì—”ì§„ : Unity, Unreal Engine
 
