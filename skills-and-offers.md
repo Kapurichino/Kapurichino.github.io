@@ -3,7 +3,7 @@
 
 # 
 
-"언어" : C#, C++
+언어 : C#, C++
 
-"게임엔진" : Unity, Unreal Engine
+게임엔진 : Unity, Unreal Engine
 
