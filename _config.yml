@@ -13,7 +13,7 @@ paginate: 10
 paginate_path: "/blog/page:num/"
 
 title: Kapurichino
-subtitle: Game Programmer
+subtitle: 게임 프로그래머
 
 # left_side:
 #   background_image: "./assets/images/left-background.jpg"
@@ -26,23 +26,23 @@ footer:
 
 # Side Menu Links
 menu:
-  - text: Portfolio
+  - text: 포트폴리오
     link: /
     icon: ""
 
-  - text: Skills & Offers
+  - text: 기술
     link: /skills-and-offers
     icon: ""
 
-  - text: Contact Me
+  - text: 문의
     link: /contact
     icon: ""
 
-  - text: My Resume
+  - text: 이력
     link: /resume
     icon: ""
 
-  - text: Blog Posts
+  - text: 포스트
     link: /blog
     icon: ""
 
