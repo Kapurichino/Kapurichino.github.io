@@ -1,120 +1,56 @@
----
-layout: compress
----
-
 <!DOCTYPE html>
-<html>
-
+<html lang="{{ site.lang | default: 'en-US' }}">
 <head>
-  {% if site.plugins contains 'jekyll-seo-tag' %}
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/libs/fontawesome-5.9.0/css/all.min.css' | relative_url }}" media="screen" type="text/css">
+
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
+  <!-- <link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}" media="print" type="text/css"> -->
+
+  <!--
+    [if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]
+  -->
+
   {% seo %}
-  {% else %}
-  <title>
-    {% if page.title == "Home" %}
-    {{ site.title }} &middot; {{ site.tagline }}
-    {% else %}
-    {{ page.title }} &middot; {{ site.title }}
-    {% endif %}
-  </title>
-  {% endif %}
-  {% for node in page.jekyll-theme-WuK.default.append_to_head %}
-  {{ node }}
-  {% endfor %}
+
 </head>
 
-<body
-  class="{{ page.jekyll-theme-WuK.default.body.theme-base }}{% if page.jekyll-theme-WuK.default.body.layout-reverse %} layout-reverse{% endif %}{% if page.jekyll-theme-WuK.default.body.sidebar-overlay %} sidebar-overlay{% endif %}">
-  {% assign sidebar_disable = false %}
-  {% if page.jekyll-theme-WuK.default.sidebar.disable %}
-  {% assign sidebar_disable = true %}
-  {% endif %}
-  {% unless sidebar_disable %}
-  <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
-     styles, `#sidebar-checkbox` for behavior. -->
-  <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"
-    {% if page.jekyll-theme-WuK.sidebar_open %}checked{% endif %} />
-  <!-- Toggleable sidebar -->
-  <div class="sidebar" id="sidebar">
-    {% if page.jekyll-theme-WuK.default.sidebar.avatar.enable %}
-    <div class="sidebar-item">
-      <div class="effect effect-right_to_left">
-        <img class="effect-img" src="{{ page.jekyll-theme-WuK.default.sidebar.avatar.img }}" alt="img" />
-        <div class="effect-info">
-          {{ site.description }}
-        </div>
-      </div>
-    </div>
-    {% endif %}
-    <nav class="sidebar-nav">
-      {% for node in page.jekyll-theme-WuK.default.sidebar.nav %}
-      <a class="sidebar-nav-item{% if page.url == node.href %} active{% endif %}" href="{{ node.href }}">
-        {{ node.title }}
-      </a>
-      {% endfor %}
-    </nav>
-    <div class="sidebar-item">
-      {% if page.jekyll-theme-WuK.default.sidebar.simple_jekyll_search.enable %}
-      {{ page.jekyll-theme-WuK.default.sidebar.simple_jekyll_search.append }}
-      {% endif %}
-      {% if page.jekyll-theme-WuK.default.sidebar.jekyll-toc.enable %}
-      {{ page.jekyll-theme-WuK.default.sidebar.jekyll-toc.prepend }}
-      {% include toc.html html=content ordered=true skipNoIDs=true sanitize=true id="toc" %}
-      {% endif %}
-      {% for node in page.jekyll-theme-WuK.default.sidebar.append_to_sidebar %}
-      {{ node }}
-      {% endfor %}
-      {% if page.jekyll-theme-WuK.default.sidebar.visitor.enable %}
-      <div class="leancloud-visitors" id="{{ page.url | relative_url }}" data-xid="{{ page.url | relative_url }}" data-flag-title="{{ page.title }}">
-        {{ page.jekyll-theme-WuK.default.sidebar.visitor.prepend }}
-        <span class="leancloud-visitors-count">
-          <i class="fas fa-spinner fa-pulse"></i>
-        </span>{{ page.jekyll-theme-WuK.default.sidebar.visitor.unit }}
-      </div>
-      {{ page.jekyll-theme-WuK.default.sidebar.visitor.append }}
-      {% endif %}
-      {% if page.jekyll-theme-WuK.default.sidebar.wordcount.enable %}
-      <div>
-        {{ page.jekyll-theme-WuK.default.sidebar.wordcount.prepend }}
-        {% assign count = 0 %}
-        {% for post in site.posts %}
-        {% assign single_count = post.content | strip_html | strip_newlines | remove: " " | size %}
-        {% assign count = count | plus: single_count %}
-        {% endfor %}
-        {% for post in site.pages %}
-        {% assign single_count = post.content | strip_html | strip_newlines | remove: " " | size %}
-        {% assign count = count | plus: single_count %}
-        {% endfor %}
-        {% if count > 1000 %}
-        {{ count | divided_by: 1000 }}{{ page.jekyll-theme-WuK.default.sidebar.wordcount.kilo }}
-        {{ count | modulo: 1000 }}{{ page.jekyll-theme-WuK.default.sidebar.wordcount.unit }}
-        {% else %}
-        {{ count }}{{ page.jekyll-theme-WuK.default.sidebar.wordcount.unit }}
-        {% endif %}
-      </div>
-      {% endif %}
-    </div>
-  </div>
-  <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
-  {% endunless %}
-  <div class="wrap">
-    {% capture _content %}
-    {{ content }}
-    {% endcapture %}
-    {% if _content contains '<pre class="highlight">' %}
-    {% comment %}
-    Fixed kramdown code highlight rendering:
-    https://github.com/penibelst/jekyll-compress-html/issues/101
-    https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
-    {% endcomment %}
-    {% assign _content = _content | replace: '<pre class="highlight"><code', '<code' %}
-    {% assign _content = _content | replace: '</code></pre>', '</code>' %}
-    {% endif %}
-    {{ _content }}
-  </div>
-  {% unless sidebar_disable %}
-  <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-  {% endunless %}
-  {{ page.jekyll-theme-WuK.default.append }}
-</body>
+<body>
+  <section class="pan-layout">
+    {% include left.html %}
 
+    <section class="pan-layout-overlay"></section>
+
+    <section class="pan-layout-right">
+      {% include header.html %}
+
+      <section class="pan-layout-content">
+        {{ content }}
+      </section>
+
+      {% include footer.html %}
+    </section>
+  </section>
+
+  <script type="text/javascript" src="{{ '/assets/libs/jquery-3.4.1.min.js' | relative_url }}"></script>
+  <script type="text/javascript" src="{{ '/assets/libs/jquery-migrate-3.0.1.min.js' | relative_url }}"></script>
+  <script type="text/javascript" src="{{ '/assets/js/panthera-jekyll.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+
+  {% if site.data.comments.enabled == true %}
+    {% case site.data.comments.type %}
+      {% when 'disqus' %}
+        {% if site.data.comments.disqus.name %}
+          <script id="dsq-count-scr" src="//{{ site.data.comments.disqus.name }}.disqus.com/count.js" async></script>
+        {% endif %}
+      {% else %}
+    {% endcase %}
+  {% endif %}
+ 
+</body>
 </html>

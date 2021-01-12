@@ -1,38 +1,30 @@
 ---
-layout: comments
+layout: default
 ---
-<div class="post">
-  <span class="post-date">
-    {% if page.jekyll-theme-WuK.post.date.enable %}
-    {{ page.jekyll-theme-WuK.post.date.prepend }}
-    {{ page.date | date_to_string }}
-    {% endif %}
-    {% if page.jekyll-theme-WuK.post.wordcount.enable %}
-    {{ page.jekyll-theme-WuK.post.wordcount.prepend }}
-    {{ page.content | strip_html | strip_newlines | remove: " " | size }}{{ page.jekyll-theme-WuK.post.wordcount.unit }}
-    {% endif %}
-    {% if page.jekyll-theme-WuK.post.readtime.enable %}
-    {{ page.jekyll-theme-WuK.post.readtime.prepend }}
-    {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: page.jekyll-theme-WuK.post.readtime.divided_by | plus: 1 }}{{ page.jekyll-theme-WuK.post.readtime.unit }}
-    {% endif %}
-    {% if page.jekyll-theme-WuK.post.visitor.enable %}
-    <span class="leancloud-visitors" id="{{ page.url | relative_url }}" data-xid="{{ page.url | relative_url }}" data-flag-title="{{ page.title }}">
-      {{ page.jekyll-theme-WuK.post.visitor.prepend }}
-      <span class="leancloud-visitors-count">
-        <i class="fas fa-spinner fa-pulse"></i>
-      </span>{{ page.jekyll-theme-WuK.post.visitor.unit }}
-    </span>
-    {% endif %}
-    {% if page.jekyll-theme-WuK.post.tags.enable %}
-    {% if page.tags.size > 0 %}
-    {{ page.jekyll-theme-WuK.post.tags.prepend }}
-    {{ page.tags | array_to_sentence_string }}
-    {% endif %}
-    {% endif %}
-    {{ page.jekyll-theme-WuK.post.copyright }}
-    {% if page.jekyll-theme-WuK.background_music %}
-    {{ page.jekyll-theme-WuK.background_music }}
-    {% endif %}
-  </span>
-  {{ content }}
-</div>
+
+<section class="post-view">
+  {% if page.image %}
+  <div class="post-view__image">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+  </div>
+  {% endif %}
+
+  <div class="post-view__header">
+    <h1>{{ page.title }}</h1>
+    <div class="post-view__info">
+      <span><strong>Date:</strong> {{ page.date | date: '%Y, %b %d' }}</span>
+    </div>
+  </div>
+
+  {% include addons/share.html %}
+  
+  <div class="post-view__body">
+    {{ content }}
+  </div>
+
+  {% include addons/share.html %}
+
+  {% include posts/related.html %}
+
+  {% include addons/comments.html %}
+</section>
