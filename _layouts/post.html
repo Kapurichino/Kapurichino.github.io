@@ -27,4 +27,8 @@ layout: default
   {% include posts/related.html %}
 
   {% include addons/comments.html %}
+  
+  {% if page.comments != false %}
+  {% include disqus_comments.html %}
+  {% endif %}
 </section>
