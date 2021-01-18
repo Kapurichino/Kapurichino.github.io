@@ -14,6 +14,8 @@ paginate_path: "/blog/page:num/"
 
 title: Kapurichino
 subtitle: "게임 프로그래머"
+email: kapurichino@gmail.com
+url: "https://kapurichino.github.io"
 
 # left_side:
 #   background_image: "./assets/images/left-background.jpg"
