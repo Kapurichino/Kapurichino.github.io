@@ -1,0 +1,16 @@
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.textEffect {
+  display: inline-block;
+  transition: all 1s;
+}
+.textEffect:hover {
+  text-shadow: 4px 2px 2px rgb(231, 231, 43);
+  color: rgb(94, 74, 9);
+}/*# sourceMappingURL=Specification.module.css.map */

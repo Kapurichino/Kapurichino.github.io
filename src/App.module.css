@@ -1,0 +1,349 @@
+body {
+  background-color: rgb(233, 238, 243);
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.menuText {
+  display: inline-block;
+  font-size: 1.5rem;
+  transform: translateX(10vw);
+  transition: all 1s;
+}
+
+.textIcon {
+  padding: 10px;
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+}
+.textIcon:hover {
+  cursor: pointer;
+}
+
+.menuIcon {
+  font-size: 2rem;
+  transition: all 0.5s;
+}
+.menuIcon:hover {
+  transform: scale(1.2);
+}
+
+.appIcon {
+  font-size: 2rem;
+  transition: all 0.5s;
+}
+.appIcon:hover {
+  transform: scale(1.2);
+}
+.appIcon:hover {
+  cursor: pointer;
+}
+
+.searchBar {
+  float: right;
+}
+
+.progressBar {
+  position: fixed;
+  width: 100vw;
+  height: 0.5vh;
+  z-index: 10;
+  background-color: rgb(168, 200, 241);
+}
+
+.progress {
+  width: 0vw;
+  background-color: rgb(58, 139, 172);
+}
+
+.searchButton {
+  background-color: transparent;
+  border: 1px solid grey;
+  color: grey;
+  transition: all 1s;
+}
+.searchButton:hover {
+  background-color: transparent;
+  border: 5px solid grey;
+  color: grey;
+}
+
+.linkBox {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid grey;
+}
+
+.barControl {
+  transition: all 0.5s;
+  width: 15vw;
+}
+.barControl:focus {
+  width: 30vw;
+}
+
+.introduce {
+  font-family: "Nanum Myeongjo", serif;
+  border: 3px solid rgb(175, 167, 167);
+  border-radius: 5px;
+  padding: 5px;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.menubar {
+  position: fixed;
+  width: 15vw;
+  height: 100vh;
+  background: linear-gradient(to top, rgb(108, 204, 233), rgb(6, 63, 218));
+  color: aliceblue;
+  z-index: 3;
+  transform: translateX(93vw);
+  transition: all 0.5s;
+}
+.menubar:hover {
+  transform: translateX(87vw);
+}
+.menubar:hover .menuText {
+  transform: translateX(1vw);
+}
+
+.toggleContainer {
+  display: none;
+}
+
+.mainBg {
+  height: 300px;
+  padding: 1px;
+  width: 100%;
+  background: linear-gradient(to top, transparent, #0162ab);
+}
+
+.mainText {
+  font-family: "Ibarra Real Nova", serif;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 60px;
+  text-shadow: 2px 2px 4px gray;
+}
+
+.whiteBox {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 1px rgb(214, 210, 210);
+}
+
+.whiteBox img {
+  width: 100%;
+}
+
+.mainContent {
+  padding: 20px;
+}
+
+.postContainer {
+  border: 5px solid rgb(156, 153, 153);
+  border-radius: 10px;
+  width: 100%;
+  padding: 40px;
+}
+.postContainer .postImage {
+  width: 100%;
+  height: 30vh;
+  display: block;
+  border-radius: 10px;
+  transition: all 1s;
+}
+
+.post {
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  border-top: 2px solid rgb(196, 192, 192);
+}
+.post:hover {
+  cursor: pointer;
+}
+.post img {
+  width: 30%;
+  height: 200px;
+  border-radius: 10px;
+}
+.post div {
+  width: 65%;
+  height: 200px;
+  overflow: hidden;
+}
+.post p {
+  font-size: 20px;
+}
+
+.underBg {
+  width: 100%;
+  height: 30vh;
+  background: linear-gradient(to bottom, transparent, #0162ab);
+  position: relative;
+}
+
+.flipOuter {
+  width: 100%;
+  height: 14vw;
+  padding-bottom: 10px;
+}
+
+.flipInner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: all 1s;
+  transform-style: preserve-3d;
+}
+
+.flipInner img {
+  width: 100%;
+}
+
+.flipInner:hover {
+  transform: rotateY(180deg);
+}
+
+.front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: rgb(228, 227, 222);
+  border-radius: 30%;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.profileContainer {
+  width: 100%;
+  margin: auto;
+}
+
+@media screen and (max-width: 576px) {
+  .mainText {
+    font-size: 8vw;
+  }
+  .searchBar {
+    float: none;
+    width: 100%;
+  }
+  .barControl {
+    width: 100%;
+  }
+  .barControl:focus {
+    width: 100%;
+  }
+  .post img {
+    display: none;
+  }
+  .post div {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 576px) {
+  .postContainer .postImage {
+    height: 50vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .profileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .profileContainer .flipOuter {
+    width: 20%;
+    height: 20vw;
+  }
+  .profileContainer .introduce {
+    width: 60%;
+    height: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 120%;
+    border: none;
+  }
+}
+.loginButton {
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 20px;
+  padding: 20px;
+  color: #0162ab;
+  transition: all 1s;
+}
+.loginButton:hover {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .postContainer .postImage {
+    height: 40vh;
+  }
+}
+@media screen and (max-width: 992px) {
+  .menubar {
+    display: none;
+  }
+  .whiteBox {
+    margin-top: 4vw;
+    padding: 2vw;
+  }
+  .toggleContainer {
+    display: block;
+  }
+  .toggleContainer .textIcon {
+    border-top: 3px solid rgb(216, 210, 210);
+  }
+  .toggleContainer .menuIcon {
+    font-size: 5vw;
+  }
+  .toggleContainer .menuText {
+    font-size: 5vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .postContainer .postImage {
+    height: 50vh;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .menubar:hover {
+    transform: translateX(84vw);
+  }
+}
+@media screen and (max-width: 1440px) {
+  .menubar:hover {
+    transform: translateX(83vw);
+  }
+}/*# sourceMappingURL=App.module.css.map */

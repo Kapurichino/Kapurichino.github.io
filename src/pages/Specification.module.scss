@@ -1,0 +1,25 @@
+.textContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:50px;
+}
+
+// text-shadow: offset-x offset-y blur-radius color | none | initial | inherit
+// offset-x : 그림자의 수평 거리를 정합니다. (필수)
+// offset-y : 그림자의 수직 거리를 정합니다. (필수)
+// blur-radius : 흐림 정도를 정합니다. (선택 : 값을 정하지 않으면 0)
+// color : 색을 정합니다. (선택 : 값을 정하지 않으면 브라우저 기본값)
+// none : 글림자 효과를 없앱니다.
+// initial : 기본값으로 설정합니다.
+// inherit : 부모 요소의 속성값을 상속받습니다.
+
+.textEffect{
+    display: inline-block;
+    transition: all 1s;
+    &:hover{
+        text-shadow: 4px 2px 2px rgb(231, 231, 43);
+        color:rgb(94, 74, 9);
+    }
+}
