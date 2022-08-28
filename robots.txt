@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kapurichino.github.io/sitemap.xml
