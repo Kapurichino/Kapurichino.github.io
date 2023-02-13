@@ -91,8 +91,9 @@ div{
     font-family: 'Nanum Myeongjo', serif;
     border : 3px solid rgb(175, 167, 167); 
     border-radius: 5px;
-    padding : 5px;
+    padding : 10px;
     line-height:1;
+    font-size: 1rem;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -165,10 +166,11 @@ div{
     border: 5px solid rgb(156, 153, 153);
     border-radius: 10px;
     width: 100%;
-    padding: 40px;
-    .postImage {
-        width: 100%;
-        height: 30vh;
+    padding: 5%;
+    min-height: 600px;
+    img {
+        width: 60%;
+        height: 60%;
         display: block;
         border-radius: 10px;
         transition: all 1s;
@@ -202,7 +204,7 @@ div{
 
 .underBg{
     width:100%;
-    height:30vh;
+    height:200px;
     background:linear-gradient(to bottom, transparent, #0162ab);
     position:relative;
 }
@@ -211,6 +213,7 @@ div{
     width:100%;
     height:14vw;
     padding-bottom: 10px;
+    border: none;
 }
 
 .flipInner{
@@ -218,11 +221,14 @@ div{
     height:100%;
     position: relative;
     transition: all 1s;
+    
+    border: none;
     transform-style: preserve-3d;
 }
 
 .flipInner img{
     width:100%;
+    border-radius: 10%;
 }
 
 .flipInner:hover{
@@ -240,8 +246,8 @@ div{
     height:100%;
     display: flex;
     align-items: center;
-    background:rgb(228, 227, 222);
-    border-radius: 30%;
+    background:white;
+    border-radius: 10%;
     justify-content: center;
     text-align: center;
     position:absolute;
@@ -281,7 +287,7 @@ div{
 
 @media screen and (min-width:576px) {
     .postContainer .postImage {
-        height: 50vh;
+        height: 10vh;
     }
 }
 
@@ -298,7 +304,6 @@ div{
         }
         .introduce{
             width: 60%;
-            height: 15vw;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -326,7 +331,7 @@ div{
 
 @media screen and (min-width:768px) {
     .postContainer .postImage {
-        height: 40vh;
+        height: 10vh;
     }
 }
 
@@ -357,7 +362,7 @@ div{
 
 @media screen and (min-width:992px) {
     .postContainer .postImage {
-        height: 50vh;
+        height: 10vh;
     }
 }
 
@@ -370,7 +375,7 @@ div{
 }
 
 
-@media screen and (max-width:1440px){
+@media screen and (max-width:1410px){
     .menubar{     
         &:hover{
             transform: translateX(83vw);

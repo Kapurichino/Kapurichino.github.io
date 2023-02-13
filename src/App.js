@@ -9,14 +9,12 @@ import Services from './pages/Services.js';
 import Posts from './pages/Posts.js';
 // import Main from './pages/Main.js';
 import Info from './pages/Info.js';
-import './RouteAnimation.css';
 import Progressbar from './components/Progressbar.js';
 import Profile from './components/Profile.js';
 import { faGithub} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import Login from './components/Login.js';
 // import {open} from './store.js';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { useDispatch, useSelector } from 'react-redux';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
@@ -50,16 +48,12 @@ function App() {
                     <Profile/>
                   </Col>
                   <Col xl={8} md={8}>
-                    <TransitionGroup component={null}>
-                      <CSSTransition key={location.key} classNames="fade" timeout={100}>
-                        <Routes location={location}>
-                          <Route path='/' element={<Posts/>}></Route>
-                          <Route path='/services' element={<Services/>}></Route>
-                          <Route path='/specification' element={<Specification/>}></Route>
-                          <Route path='/info' element={<Info/>}></Route>
-                        </Routes>
-                      </CSSTransition>
-                    </TransitionGroup>
+                    <Routes location={location}>
+                      <Route path='/' element={<Posts/>}></Route>
+                      <Route path='/services' element={<Services/>}></Route>
+                      <Route path='/specification' element={<Specification/>}></Route>
+                      <Route path='/info' element={<Info/>}></Route>
+                    </Routes>
                   </Col>
                   <Col xl={2} md={1}></Col>
             </Row>
@@ -69,7 +63,7 @@ function App() {
           {/* <div>
             <button className={app.loginButton} onClick={()=>dispatch(open())}><p><b>로그인</b></p></button>
           </div> */}
-          <div style={{position:'absolute', padding:'1vw', left:'5%', bottom:'30%', color:'aliceblue'}}>
+          <div style={{position:'absolute', padding:'10px', left:'50px', bottom:'50px', color:'aliceblue'}}>
             <FontAwesomeIcon icon={faGithub} className={app.appIcon}
             style={{marginRight:'15px', fontSize:'40px'}}  
             onClick={()=>{window.open('https://github.com/Kapurichino', '_blank')}}/>

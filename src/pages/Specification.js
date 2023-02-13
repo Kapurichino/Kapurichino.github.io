@@ -8,7 +8,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 function Specification(){
     const data = {
-        labels: ['React', 'Html&CSS', 'Python', 'Javascript', 'Java', 'C++'],
+        labels: ['Html&CSS', 'React', 'Next.js', 'Javascript', 'Flutter', 'Typescript'],
         datasets: [
           {
             label: '# of Votes',

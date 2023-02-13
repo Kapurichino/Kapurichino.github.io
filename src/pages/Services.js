@@ -26,10 +26,11 @@ function Services(){
                     </Col>
                     <Col xs={12} sm={12} md={8}>
                         <ul>
-                            <Styledli>CSS로 디자인하는 걸 상당히 좋아합니다.</Styledli>
-                            <Styledli>React 사용을 즐겨합니다.</Styledli>  
+                            <Styledli>웹디자인을 좋아합니다.</Styledli>
+                            <Styledli>React 프레임워크를 이용한 웹 프로젝트를 하고 있습니다.</Styledli>  
                             <Styledli>Animation 제작에 진심입니다.</Styledli>
-                            <Styledli>3D object control에 관심을 가지고 있습니다</Styledli>
+                            <Styledli>3D object control에 관심을 가지고 있습니다.</Styledli>
+                            <Styledli>Three.js, Flutter를 공부중입니다.</Styledli> 
                             <Styledli>Typescript, Next.js를 공부할 예정입니다.</Styledli>
                         </ul>
                         <div>

@@ -33,7 +33,7 @@ export default function Progressbar(){
         width:`${scroll}vw`,
         height:'100%',
         backgroundColor: 'rgb(58, 139, 172)',
-        transition:'all 1s'
+        transition:'all 0.5s'
     }
     
     return(
